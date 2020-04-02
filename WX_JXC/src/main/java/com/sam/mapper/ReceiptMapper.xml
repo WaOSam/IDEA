@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sam.mapper.ReceiptMapper" >
+  <resultMap id="BaseResultMap" type="com.sam.pojo.Receipt" >
+    <id column="rece_id" property="receId" jdbcType="INTEGER" />
+    <result column="rece_createtime" property="receCreatetime" jdbcType="TIMESTAMP" />
+    <result column="rece_supp_id" property="receSuppId" jdbcType="INTEGER" />
+    <result column="rece_user_id" property="receUserId" jdbcType="INTEGER" />
+    <result column="rece_sum" property="receSum" jdbcType="DECIMAL" />
+    <result column="rece_sate" property="receSate" jdbcType="INTEGER" />
+    <result column="rece_note" property="receNote" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    rece_id, rece_createtime, rece_supp_id, rece_user_id, rece_sum, rece_sate, rece_note
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.sam.pojo.ReceiptExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from receipt
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from receipt
+    where rece_id = #{receId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from receipt
+    where rece_id = #{receId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sam.pojo.ReceiptExample" >
+    delete from receipt
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sam.pojo.Receipt" >
+    insert into receipt (rece_id, rece_createtime, rece_supp_id, 
+      rece_user_id, rece_sum, rece_sate, 
+      rece_note)
+    values (#{receId,jdbcType=INTEGER}, #{receCreatetime,jdbcType=TIMESTAMP}, #{receSuppId,jdbcType=INTEGER}, 
+      #{receUserId,jdbcType=INTEGER}, #{receSum,jdbcType=DECIMAL}, #{receSate,jdbcType=INTEGER}, 
+      #{receNote,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sam.pojo.Receipt" >
+    insert into receipt
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="receId != null" >
+        rece_id,
+      </if>
+      <if test="receCreatetime != null" >
+        rece_createtime,
+      </if>
+      <if test="receSuppId != null" >
+        rece_supp_id,
+      </if>
+      <if test="receUserId != null" >
+        rece_user_id,
+      </if>
+      <if test="receSum != null" >
+        rece_sum,
+      </if>
+      <if test="receSate != null" >
+        rece_sate,
+      </if>
+      <if test="receNote != null" >
+        rece_note,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="receId != null" >
+        #{receId,jdbcType=INTEGER},
+      </if>
+      <if test="receCreatetime != null" >
+        #{receCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="receSuppId != null" >
+        #{receSuppId,jdbcType=INTEGER},
+      </if>
+      <if test="receUserId != null" >
+        #{receUserId,jdbcType=INTEGER},
+      </if>
+      <if test="receSum != null" >
+        #{receSum,jdbcType=DECIMAL},
+      </if>
+      <if test="receSate != null" >
+        #{receSate,jdbcType=INTEGER},
+      </if>
+      <if test="receNote != null" >
+        #{receNote,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sam.pojo.ReceiptExample" resultType="java.lang.Integer" >
+    select count(*) from receipt
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update receipt
+    <set >
+      <if test="record.receId != null" >
+        rece_id = #{record.receId,jdbcType=INTEGER},
+      </if>
+      <if test="record.receCreatetime != null" >
+        rece_createtime = #{record.receCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.receSuppId != null" >
+        rece_supp_id = #{record.receSuppId,jdbcType=INTEGER},
+      </if>
+      <if test="record.receUserId != null" >
+        rece_user_id = #{record.receUserId,jdbcType=INTEGER},
+      </if>
+      <if test="record.receSum != null" >
+        rece_sum = #{record.receSum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.receSate != null" >
+        rece_sate = #{record.receSate,jdbcType=INTEGER},
+      </if>
+      <if test="record.receNote != null" >
+        rece_note = #{record.receNote,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update receipt
+    set rece_id = #{record.receId,jdbcType=INTEGER},
+      rece_createtime = #{record.receCreatetime,jdbcType=TIMESTAMP},
+      rece_supp_id = #{record.receSuppId,jdbcType=INTEGER},
+      rece_user_id = #{record.receUserId,jdbcType=INTEGER},
+      rece_sum = #{record.receSum,jdbcType=DECIMAL},
+      rece_sate = #{record.receSate,jdbcType=INTEGER},
+      rece_note = #{record.receNote,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sam.pojo.Receipt" >
+    update receipt
+    <set >
+      <if test="receCreatetime != null" >
+        rece_createtime = #{receCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="receSuppId != null" >
+        rece_supp_id = #{receSuppId,jdbcType=INTEGER},
+      </if>
+      <if test="receUserId != null" >
+        rece_user_id = #{receUserId,jdbcType=INTEGER},
+      </if>
+      <if test="receSum != null" >
+        rece_sum = #{receSum,jdbcType=DECIMAL},
+      </if>
+      <if test="receSate != null" >
+        rece_sate = #{receSate,jdbcType=INTEGER},
+      </if>
+      <if test="receNote != null" >
+        rece_note = #{receNote,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where rece_id = #{receId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sam.pojo.Receipt" >
+    update receipt
+    set rece_createtime = #{receCreatetime,jdbcType=TIMESTAMP},
+      rece_supp_id = #{receSuppId,jdbcType=INTEGER},
+      rece_user_id = #{receUserId,jdbcType=INTEGER},
+      rece_sum = #{receSum,jdbcType=DECIMAL},
+      rece_sate = #{receSate,jdbcType=INTEGER},
+      rece_note = #{receNote,jdbcType=VARCHAR}
+    where rece_id = #{receId,jdbcType=INTEGER}
+  </update>
+</mapper>

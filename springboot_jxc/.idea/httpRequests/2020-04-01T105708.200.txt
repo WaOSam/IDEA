@@ -1,0 +1,1 @@
+{"custName":"???","custPhone":"123456789","saleCreatetime":"2020-03-31 14:12:47","saleCustId":1,"saleDetailList":[{"detaGoodsId":1,"detaId":1,"detaNum":12,"detaPrice":3.00,"detaSaleId":1},{"detaGoodsId":1,"detaId":2,"detaNum":5,"detaSaleId":1}],"saleId":1,"saleNote":"","saleState":3,"saleSum":12.00,"saleUserId":1245,"userName":"??"}

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sam.mapper.SaleMapper" >
+  <resultMap id="BaseResultMap" type="com.sam.pojo.Sale" >
+    <id column="sale_id" property="saleId" jdbcType="INTEGER" />
+    <result column="sale_createtime" property="saleCreatetime" jdbcType="TIMESTAMP" />
+    <result column="sale_cust_id" property="saleCustId" jdbcType="INTEGER" />
+    <result column="sale_user_id" property="saleUserId" jdbcType="INTEGER" />
+    <result column="sale_sum" property="saleSum" jdbcType="DECIMAL" />
+    <result column="sale_state" property="saleState" jdbcType="INTEGER" />
+    <result column="sale_note" property="saleNote" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    sale_id, sale_createtime, sale_cust_id, sale_user_id, sale_sum, sale_state, sale_note
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.sam.pojo.SaleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sale
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sale
+    where sale_id = #{saleId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sale
+    where sale_id = #{saleId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sam.pojo.SaleExample" >
+    delete from sale
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sam.pojo.Sale" >
+    insert into sale (sale_id, sale_createtime, sale_cust_id, 
+      sale_user_id, sale_sum, sale_state, 
+      sale_note)
+    values (#{saleId,jdbcType=INTEGER}, #{saleCreatetime,jdbcType=TIMESTAMP}, #{saleCustId,jdbcType=INTEGER}, 
+      #{saleUserId,jdbcType=INTEGER}, #{saleSum,jdbcType=DECIMAL}, #{saleState,jdbcType=INTEGER}, 
+      #{saleNote,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sam.pojo.Sale" >
+    insert into sale
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="saleId != null" >
+        sale_id,
+      </if>
+      <if test="saleCreatetime != null" >
+        sale_createtime,
+      </if>
+      <if test="saleCustId != null" >
+        sale_cust_id,
+      </if>
+      <if test="saleUserId != null" >
+        sale_user_id,
+      </if>
+      <if test="saleSum != null" >
+        sale_sum,
+      </if>
+      <if test="saleState != null" >
+        sale_state,
+      </if>
+      <if test="saleNote != null" >
+        sale_note,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="saleId != null" >
+        #{saleId,jdbcType=INTEGER},
+      </if>
+      <if test="saleCreatetime != null" >
+        #{saleCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="saleCustId != null" >
+        #{saleCustId,jdbcType=INTEGER},
+      </if>
+      <if test="saleUserId != null" >
+        #{saleUserId,jdbcType=INTEGER},
+      </if>
+      <if test="saleSum != null" >
+        #{saleSum,jdbcType=DECIMAL},
+      </if>
+      <if test="saleState != null" >
+        #{saleState,jdbcType=INTEGER},
+      </if>
+      <if test="saleNote != null" >
+        #{saleNote,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sam.pojo.SaleExample" resultType="java.lang.Integer" >
+    select count(*) from sale
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sale
+    <set >
+      <if test="record.saleId != null" >
+        sale_id = #{record.saleId,jdbcType=INTEGER},
+      </if>
+      <if test="record.saleCreatetime != null" >
+        sale_createtime = #{record.saleCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.saleCustId != null" >
+        sale_cust_id = #{record.saleCustId,jdbcType=INTEGER},
+      </if>
+      <if test="record.saleUserId != null" >
+        sale_user_id = #{record.saleUserId,jdbcType=INTEGER},
+      </if>
+      <if test="record.saleSum != null" >
+        sale_sum = #{record.saleSum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.saleState != null" >
+        sale_state = #{record.saleState,jdbcType=INTEGER},
+      </if>
+      <if test="record.saleNote != null" >
+        sale_note = #{record.saleNote,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sale
+    set sale_id = #{record.saleId,jdbcType=INTEGER},
+      sale_createtime = #{record.saleCreatetime,jdbcType=TIMESTAMP},
+      sale_cust_id = #{record.saleCustId,jdbcType=INTEGER},
+      sale_user_id = #{record.saleUserId,jdbcType=INTEGER},
+      sale_sum = #{record.saleSum,jdbcType=DECIMAL},
+      sale_state = #{record.saleState,jdbcType=INTEGER},
+      sale_note = #{record.saleNote,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sam.pojo.Sale" >
+    update sale
+    <set >
+      <if test="saleCreatetime != null" >
+        sale_createtime = #{saleCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="saleCustId != null" >
+        sale_cust_id = #{saleCustId,jdbcType=INTEGER},
+      </if>
+      <if test="saleUserId != null" >
+        sale_user_id = #{saleUserId,jdbcType=INTEGER},
+      </if>
+      <if test="saleSum != null" >
+        sale_sum = #{saleSum,jdbcType=DECIMAL},
+      </if>
+      <if test="saleState != null" >
+        sale_state = #{saleState,jdbcType=INTEGER},
+      </if>
+      <if test="saleNote != null" >
+        sale_note = #{saleNote,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sale_id = #{saleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sam.pojo.Sale" >
+    update sale
+    set sale_createtime = #{saleCreatetime,jdbcType=TIMESTAMP},
+      sale_cust_id = #{saleCustId,jdbcType=INTEGER},
+      sale_user_id = #{saleUserId,jdbcType=INTEGER},
+      sale_sum = #{saleSum,jdbcType=DECIMAL},
+      sale_state = #{saleState,jdbcType=INTEGER},
+      sale_note = #{saleNote,jdbcType=VARCHAR}
+    where sale_id = #{saleId,jdbcType=INTEGER}
+  </update>
+</mapper>

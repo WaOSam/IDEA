@@ -1,0 +1,544 @@
+POST http://localhost:8088/user/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1245
+
+<> 2020-04-01T112418.200.json
+
+###
+
+POST http://localhost:8088/user/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112411.200.json
+
+###
+
+POST http://localhost:8088/supplier/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112404.200.json
+
+###
+
+POST http://localhost:8088/store/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112357.200.json
+
+###
+
+POST http://localhost:8088/saleDetail/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112351.200.json
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112345.200.json
+
+###
+
+POST http://localhost:8088/receDetail/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112339.200.json
+
+###
+
+POST http://localhost:8088/receipt/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112334.200.json
+
+###
+
+POST http://localhost:8088/receDetail/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112303.200.txt
+
+###
+
+POST http://localhost:8088/receipt/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112256.200.json
+
+###
+
+POST http://localhost:8088/goods/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112249.200.json
+
+###
+
+POST http://localhost:8088/customer/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112242.200.json
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T112238.200.json
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T112226.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":""}
+
+<> 2020-04-01T112219.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectByPage
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"pageSize":2,"pageNum":1}
+
+###
+
+POST http://localhost:8088/sale/selectByPage
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"pageSize":2,"pageNum":1}
+
+<> 2020-04-01T111700.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":""}
+
+<> 2020-04-01T111618.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T111557.200.txt
+
+###
+
+POST http://localhost:8088/customer/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T111548.200.json
+
+###
+
+POST http://localhost:8088/customer/selecetById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T111531.404.json
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T111517.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T111357.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T111346.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T111148.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T111132.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T110606.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T110552.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T105708.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T105652.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T105152.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T105137.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T104854.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T104834.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T104431.200.txt
+
+###
+
+POST http://localhost:8088/receipt/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T104419.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T104404.200.txt
+
+###
+
+POST http://localhost:8088/receipt/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+###
+
+POST http://localhost:8088/receipt/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T104344.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":245,"password":""}
+
+<> 2020-04-01T104335.200.txt
+
+###
+
+POST http://localhost:8088/receipt/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T104236.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T104214.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":"000000"}
+
+<> 2020-04-01T104159.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":""}
+
+<> 2020-04-01T104141.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":245,"password":""}
+
+<> 2020-04-01T103535.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"account":1245,"password":""}
+
+<> 2020-04-01T103529.200.txt
+
+###
+
+POST http://localhost:8088/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T103512.500.json
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T103454.200.txt
+
+###
+
+POST http://localhost:8088/sale/selectById
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+1
+
+<> 2020-04-01T103330.200.txt
+
+###
+
