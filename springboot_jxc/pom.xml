@@ -58,7 +58,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.32</version>
+            <version>1.2.83</version>
         </dependency>
 
         <!--transaction.xml中有AspectJ语法，所以需要导包，这里干脆直接导入springboot的aop包，即常用事务功能都支持 -->
